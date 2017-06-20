@@ -1,5 +1,5 @@
 # README
-Учебное приложение он-лайн школы (Thinknetica)[http://thinknetica.com].
+Учебное приложение он-лайн школы [Thinknetica](http://thinknetica.com).
 
 * Ruby version:  2.2.6p396
 * Rails version: 5.1.1
