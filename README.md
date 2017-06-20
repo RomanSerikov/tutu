@@ -1,24 +1,13 @@
 # README
+Учебное приложение он-лайн школы (Thinknetica)[http://thinknetica.com].
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version:  2.2.6p396
+* Rails version: 5.1.1
+* Текущий урок:  11
+* Задание:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+Создать новое rails-приложение в отдельном репозитории (!!!)
+Используя scaffolding создать ресурс RailwayStation (как показано в скринкасте)
+Используя scaffolding создать ресурс Train, который имеет номер в качестве атрибута
+```
