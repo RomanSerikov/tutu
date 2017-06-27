@@ -1,6 +1,6 @@
 <%= form_with(model: route, local: true) do |form| %>
 
-  <%= render 'errors', route: route %>
+  <%= render 'common/errors', resource: route %>
 
   <div class="field">
     <%= form.label :title %>
@@ -8,6 +8,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "#{ route.new_record? ? 'Создать' : 'Изменить' }" %>
   </div>
 <% end %>
