@@ -7,6 +7,11 @@
     <%= form.number_field :number, id: :train_number %>
   </div>
 
+  <div class="field">
+    <%= form.label :route, "Выбрать маршрут" %>
+    <%= form.collection_select :route_id, Route.all, :id, :title %>
+  </div>
+
   <div class="actions">
     <%= form.submit "#{ train.new_record? ? 'Создать' : 'Изменить' }" %>
   </div>
