@@ -1,0 +1,2 @@
+module CarriageHelper
+end
