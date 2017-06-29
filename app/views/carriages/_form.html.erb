@@ -17,6 +17,11 @@
     <%= form.number_field :botseats %>
   </div>
 
+  <div class="field">
+    <%= form.label :train, "Выбрать поезд" %>
+    <%= form.collection_select :train_id, Train.all, :id, :number %>
+  </div>
+
   <div class="actions">
     <%= form.submit "#{ carriage.new_record? ? 'Создать' : 'Изменить' }" %>
   </div>
