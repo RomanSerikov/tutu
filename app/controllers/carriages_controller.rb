@@ -1,4 +1,4 @@
-class CarriageController < ApplicationController
+class CarriagesController < ApplicationController
   before_action :set_carriage, only: [:show, :edit, :update, :destroy]
 
   def index

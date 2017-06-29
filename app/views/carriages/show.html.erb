@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Тип:</strong>
+  <%= @carriage.carriage_type %>
+</p>
+
+<p>
+  <strong>Кол-во верхних мест:</strong>
+  <%= @carriage.topseats %>
+</p>
+
+<p>
+  <strong>Кол-во нижних мест:</strong>
+  <%= @carriage.botseats %>
+</p>
+
+<%= link_to 'Изменить', edit_carriage_path(@carriage) %> |
+<%= link_to 'Назад', carriages_path %>

@@ -1,0 +1,23 @@
+<%= form_with(model: carriage, local: true) do |form| %>
+
+  <%= render 'common/errors', resource: carriage %>
+
+  <div class="field">
+    <%= form.label :carriage_type %>
+    <%= form.select :carriage_type, Carriage::CARRIAGE_TYPES %>
+  </div>
+
+  <div class="field">
+    <%= form.label :topseats %>
+    <%= form.number_field :topseats %>
+  </div>
+
+  <div class="field">
+    <%= form.label :botseats %>
+    <%= form.number_field :botseats %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "#{ carriage.new_record? ? 'Создать' : 'Изменить' }" %>
+  </div>
+<% end %>
