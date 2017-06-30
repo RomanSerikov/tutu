@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>Номер:</strong>
   <%= @train.number %>
 </p>
 
@@ -14,6 +14,34 @@
   <% end %>
 </p>
 
+<p>
+  <strong>Купейных вагонов в поезде:</strong>
+  <%= @train.coupe_carriages.size %>
+</p>
 
+<p>
+  <strong>Плацкартных вагонов в поезде:</strong>
+  <%= @train.platscard_carriages.size %>
+</p>
+
+<p>
+  <strong>Купейных верхних мест:</strong>
+  <%= @train.coupe_top_seats %>
+</p>
+
+<p>
+  <strong>Купейных нижних мест:</strong>
+  <%= @train.coupe_bot_seats %>
+</p>
+
+<p>
+  <strong>Плацкартных верхних мест:</strong>
+  <%= @train.platscard_top_seats %>
+</p>
+
+<p>
+  <strong>Плацкартных нижних мест:</strong>
+  <%= @train.platscard_bot_seats %>
+</p>
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>
