@@ -6,36 +6,16 @@ class Train < ApplicationRecord
   has_many :carriages
 
   def coupe_carriages
-    choose_carriages('Купе')
-  end
-
-  def coupe_top_seats
-    count_seats(coupe_carriages, :topseats)
-  end
-
-  def coupe_bot_seats
-    count_seats(coupe_carriages, :botseats)
+    choose_carriages('coupe')
   end
 
   def platscard_carriages
-    choose_carriages('Плацкарт')
-  end
-
-  def platscard_top_seats
-    count_seats(platscard_carriages, :topseats)
-  end
-
-  def platscard_bot_seats
-    count_seats(platscard_carriages, :botseats) 
+    choose_carriages('platscard')
   end
 
   private
 
   def choose_carriages(type)
     self.carriages.where(carriage_type: type)
-  end
-
-  def count_seats(carriages, type)
-    carriages.map(&type).reduce(0, :+)
   end
 end

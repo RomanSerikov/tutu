@@ -26,22 +26,22 @@
 
 <p>
   <strong>Купейных верхних мест:</strong>
-  <%= @train.coupe_top_seats %>
+  <%= @train.coupe_carriages.sum(:topseats) %>
 </p>
 
 <p>
   <strong>Купейных нижних мест:</strong>
-  <%= @train.coupe_bot_seats %>
+  <%= @train.coupe_carriages.sum(:botseats) %>
 </p>
 
 <p>
   <strong>Плацкартных верхних мест:</strong>
-  <%= @train.platscard_top_seats %>
+  <%= @train.platscard_carriages.sum(:topseats) %>
 </p>
 
 <p>
   <strong>Плацкартных нижних мест:</strong>
-  <%= @train.platscard_bot_seats %>
+  <%= @train.platscard_carriages.sum(:botseats) %>
 </p>
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>
