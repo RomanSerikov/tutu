@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 20170629220201) do
 
   create_table "carriages", force: :cascade do |t|
-    t.string "carriage_type"
-    t.integer "topseats"
-    t.integer "botseats"
+    t.string "carriage_type", null: false
+    t.integer "topseats", default: 0
+    t.integer "botseats", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "train_id"
