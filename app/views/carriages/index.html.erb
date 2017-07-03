@@ -14,17 +14,7 @@
   </thead>
 
   <tbody>
-    <% @carriages.each do |carriage| %>
-      <tr>
-        <td><%= carriage.carriage_type %></td>
-        <td><%= carriage.topseats %></td>
-        <td><%= carriage.botseats %></td>
-        <td><%= carriage.train.number %></td>
-        <td><%= link_to 'Показать', carriage %></td>
-        <td><%= link_to 'Изменить', edit_carriage_path(carriage) %></td>
-        <td><%= link_to 'Удалить', carriage, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @carriages %>
   </tbody>
 </table>
 
