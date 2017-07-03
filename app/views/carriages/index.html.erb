@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Вагоны</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Тип</th>
+      <th>Кол-во верхних мест</th>
+      <th>Кол-во нижних мест</th>
+      <th>Номер поезда</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @carriages %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Создать Вагон', new_carriage_path %>
