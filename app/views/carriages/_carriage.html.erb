@@ -1,7 +1,10 @@
 <tr>
-  <td><%= carriage.carriage_type %></td>
+  <td><%= carriage.type %></td>
   <td><%= carriage.topseats %></td>
   <td><%= carriage.botseats %></td>
+  <td><%= carriage.side_top_seats %></td>
+  <td><%= carriage.side_bot_seats %></td>
+  <td><%= carriage.chair_seats %></td>
   <td><%= carriage.train.number %></td>
   <td><%= link_to 'Показать', carriage %></td>
   <td><%= link_to 'Изменить', edit_carriage_path(carriage) %></td>

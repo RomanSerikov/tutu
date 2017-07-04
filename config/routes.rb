@@ -3,5 +3,10 @@ Rails.application.routes.draw do
   resources :railway_stations
   resources :routes
   resources :carriages
+
+  resources :coupe_carriages,     :controller => "carriages", :type => "CoupeCarriage"
+  resources :platscard_carriages, :controller => "carriages", :type => "PlatscardCarriage"
+  resources :sv_carriages,        :controller => "carriages", :type => "SvCarriage"
+  resources :chair_carriages,     :controller => "carriages", :type => "ChairCarriage"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
