@@ -20,5 +20,10 @@
   <%= @carriage.train.number %>
 </p>
 
+<p>
+  <strong>Номер вагона в поезде:</strong>
+  <%= @carriage.number %>
+</p>
+
 <%= link_to 'Изменить', edit_carriage_path(@carriage) %> |
 <%= link_to 'Назад', carriages_path %>
