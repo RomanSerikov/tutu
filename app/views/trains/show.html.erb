@@ -15,33 +15,46 @@
 </p>
 
 <p>
-  <strong>Купейных вагонов в поезде:</strong>
-  <%= @train.carriages.coupe.count %>
+  <% if @train.carriages.present? %>
+    <strong>Вагоны:</strong>
+    <% @train.carriages.each do |carriage| %>
+    <%= link_to carriage.number, carriage %>
+    <% end %>
+
+    <p>
+      <strong>Купейных вагонов в поезде:</strong>
+      <%= @train.carriages.coupe.count %>
+    </p>
+
+    <p>
+      <strong>Плацкартных вагонов в поезде:</strong>
+      <%= @train.carriages.platscard.count %>
+    </p>
+
+    <p>
+      <strong>Купейных верхних мест:</strong>
+      <%= @train.carriages.coupe.sum(:topseats) %>
+    </p>
+
+    <p>
+      <strong>Купейных нижних мест:</strong>
+      <%= @train.carriages.coupe.sum(:botseats) %>
+    </p>
+
+    <p>
+      <strong>Плацкартных верхних мест:</strong>
+      <%= @train.carriages.platscard.sum(:topseats) %>
+    </p>
+
+    <p>
+      <strong>Плацкартных нижних мест:</strong>
+      <%= @train.carriages.platscard.sum(:botseats) %>
+    </p>
+
+  <% else %>
+    У поезда нет вагонов
+  <% end %>
 </p>
 
-<p>
-  <strong>Плацкартных вагонов в поезде:</strong>
-  <%= @train.carriages.platscard.count %>
-</p>
-
-<p>
-  <strong>Купейных верхних мест:</strong>
-  <%= @train.carriages.coupe.sum(:topseats) %>
-</p>
-
-<p>
-  <strong>Купейных нижних мест:</strong>
-  <%= @train.carriages.coupe.sum(:botseats) %>
-</p>
-
-<p>
-  <strong>Плацкартных верхних мест:</strong>
-  <%= @train.carriages.platscard.sum(:topseats) %>
-</p>
-
-<p>
-  <strong>Плацкартных нижних мест:</strong>
-  <%= @train.carriages.platscard.sum(:botseats) %>
-</p>
 <%= link_to 'Изменить', edit_train_path(@train) %> |
 <%= link_to 'Назад', trains_path %>
