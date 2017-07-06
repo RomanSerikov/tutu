@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170706154841) do
+ActiveRecord::Schema.define(version: 20170706160259) do
 
   create_table "carriages", force: :cascade do |t|
     t.integer "topseats", default: 0
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20170706154841) do
     t.datetime "updated_at", null: false
     t.integer "route_id"
     t.integer "current_station_id"
+    t.boolean "head_sort", default: true
     t.index ["current_station_id"], name: "index_trains_on_current_station_id"
     t.index ["route_id"], name: "index_trains_on_route_id"
   end

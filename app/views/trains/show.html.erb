@@ -15,9 +15,14 @@
 </p>
 
 <p>
+  <strong>Сортировка:</strong>
+  <%= @train.head_sort ? "С головы поезда" : "С хвоста поезда" %>
+</p>
+
+<p>
   <% if @train.carriages.present? %>
     <strong>Вагоны:</strong>
-    <% @train.carriages.each do |carriage| %>
+    <% @train.carriages.choose_head(@train).each do |carriage| %>
     <%= link_to carriage.number, carriage %>
     <% end %>
 

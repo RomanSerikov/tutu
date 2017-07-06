@@ -3,6 +3,7 @@ class Carriage < ApplicationRecord
   scope :platscard, -> { where(type: 'PlatscardCarriage') }
   scope :sv,        -> { where(type: 'SvCarriage') }
   scope :chair,     -> { where(type: 'ChairCarriage') }
+  scope :choose_head, ->(train) { train.head_sort ? order('number ASC') : order('number DESC') }
 
   CARRIAGE_TYPES = %w[CoupeCarriage PlatscardCarriage SvCarriage ChairCarriage]
 
