@@ -10,6 +10,7 @@ class Carriage < ApplicationRecord
 
   validates :type, inclusion: { in: CARRIAGE_TYPES,
     message: "%{value} is not a valid carriage type" }
+  validates :number, uniqueness: { scope: :train_id }
 
   before_validation :set_number
 
