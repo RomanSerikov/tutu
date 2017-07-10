@@ -38,22 +38,22 @@
 
     <p>
       <strong>Купейных верхних мест:</strong>
-      <%= @train.carriages.coupe.sum(:topseats) %>
+      <%= @train.count_seats(:coupe_carriage, :topseats) %>
     </p>
 
     <p>
       <strong>Купейных нижних мест:</strong>
-      <%= @train.carriages.coupe.sum(:botseats) %>
+      <%= @train.count_seats(:coupe_carriage, :botseats) %>
     </p>
 
     <p>
       <strong>Плацкартных верхних мест:</strong>
-      <%= @train.carriages.platscard.sum(:topseats) %>
+      <%= @train.count_seats(:platscard_carriage, :topseats) %>
     </p>
 
     <p>
       <strong>Плацкартных нижних мест:</strong>
-      <%= @train.carriages.platscard.sum(:botseats) %>
+      <%= @train.count_seats(:platscard_carriage, :botseats) %>
     </p>
 
   <% else %>
