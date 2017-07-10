@@ -6,7 +6,7 @@ class CreateCarriages < ActiveRecord::Migration[5.1]
       t.integer :side_top_seats, default: 0
       t.integer :side_bot_seats, default: 0
       t.integer :chair_seats,    default: 0
-      t.string  :type
+      t.string  :type,           null: false
 
       t.timestamps
     end

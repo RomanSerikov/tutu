@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170706160259) do
     t.integer "side_top_seats", default: 0
     t.integer "side_bot_seats", default: 0
     t.integer "chair_seats", default: 0
-    t.string "type"
+    t.string "type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "train_id"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170706160259) do
   create_table "railway_stations_routes", force: :cascade do |t|
     t.integer "railway_station_id"
     t.integer "route_id"
-    t.integer "station_position"
+    t.integer "station_position", default: 0
   end
 
   create_table "routes", force: :cascade do |t|
