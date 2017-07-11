@@ -28,6 +28,8 @@
         <tr>
           <td width="100px">Название</td>
           <td>Позиция</td>
+          <td>Время прибытия</td>
+          <td>Время отправления</td>
         </tr>
       </thead>
       <tbody>
@@ -37,6 +39,22 @@
             <td>
               <%= form_tag update_position_railway_station_path(station), method: :patch do %>
                 <%= number_field_tag :position, station.position_in(@route) %>
+                <%= hidden_field_tag :route_id, @route.id %>
+                <%= submit_tag "Изменить" %>
+              <% end %>
+            </td>
+            <td>
+              <%= form_tag update_arrival_railway_station_path(station), method: :patch do %>
+                <%= time_field_tag :arrival_time, 
+                                   station.time_in(@route, :arrival_time).try(:strftime, "%H:%M") %>
+                <%= hidden_field_tag :route_id, @route.id %>
+                <%= submit_tag "Изменить" %>
+              <% end %>
+            </td>
+            <td>
+              <%= form_tag update_departure_railway_station_path(station), method: :patch do %>
+                <%= time_field_tag :departure_time, 
+                                   station.time_in(@route, :departure_time).try(:strftime, "%H:%M") %>
                 <%= hidden_field_tag :route_id, @route.id %>
                 <%= submit_tag "Изменить" %>
               <% end %>

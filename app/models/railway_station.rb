@@ -19,6 +19,15 @@ class RailwayStation < ApplicationRecord
     station_route(route).try(:station_position)
   end
 
+  def update_event(route, event_type, time)
+    station_route = station_route(route)
+    station_route.update(event_type => time)
+  end
+
+  def time_in(route, event_time)
+    station_route(route).try(event_time)
+  end
+
   protected
 
   def station_route(route)
