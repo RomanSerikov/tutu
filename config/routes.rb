@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  resources :trains
+  resources :trains do
+    resources :carriages, shallow: true
+  end
+
   resources :railway_stations do
     patch :update_position, on: :member
   end
+  
   resources :routes
-  resources :carriages
 
   resources :coupe_carriages,     :controller => "carriages", :type => "CoupeCarriage"
   resources :platscard_carriages, :controller => "carriages", :type => "PlatscardCarriage"

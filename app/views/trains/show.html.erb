@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Номер:</strong>
+  <strong>Номер поезда:</strong>
   <%= @train.number %>
 </p>
 
@@ -22,9 +22,11 @@
 <p>
   <% if @train.carriages.present? %>
     <strong>Вагоны:</strong>
-    <% @train.carriages.choose_head(@train).each do |carriage| %>
-    <%= link_to carriage.number, carriage %>
-    <% end %>
+    <ul>
+      <% @train.carriages.choose_head(@train).each do |carriage| %>
+        <li><%= link_to "Вагон № #{carriage.number}", carriage %></li>
+      <% end %>
+    </ul>
 
     <p>
       <strong>Купейных вагонов в поезде:</strong>
@@ -59,6 +61,10 @@
   <% else %>
     У поезда нет вагонов
   <% end %>
+</p>
+
+<p>
+  <%= link_to "Добавить вагон", new_train_carriage_path(@train) %>
 </p>
 
 <%= link_to 'Изменить', edit_train_path(@train) %> |
