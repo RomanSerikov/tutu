@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   
   resources :routes
 
+  resource :search, only: [:new, :show, :create]
+
   resources :coupe_carriages,     :controller => "carriages", :type => "CoupeCarriage"
   resources :platscard_carriages, :controller => "carriages", :type => "PlatscardCarriage"
   resources :sv_carriages,        :controller => "carriages", :type => "SvCarriage"

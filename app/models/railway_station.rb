@@ -25,12 +25,12 @@ class RailwayStation < ApplicationRecord
   end
 
   def time_in(route, event_time)
-    station_route(route).try(event_time)
+    station_route(route).try(event_time).try(:strftime, "%H:%M")
   end
 
   protected
 
   def station_route(route)
-    @station_route ||= railway_stations_routes.where(route: route).first
+    @station_route = railway_stations_routes.where(route: route).first
   end
 end

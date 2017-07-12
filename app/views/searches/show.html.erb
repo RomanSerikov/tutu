@@ -1,0 +1,22 @@
+<h1>Результат поиска:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Номер поезда</th>
+      <th>Отправление с <%= @start.title %></th>
+      <th>Прибытие на <%= @finish.title %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |result| %>
+    <tr>
+      <td><%= result.number %></td>
+      <td><%= @start.time_in(result.route, :departure_time) %></td>
+      <td><%= @finish.time_in(result.route, :arrival_time) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Еще найти', new_search_path %>

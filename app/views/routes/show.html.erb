@@ -45,16 +45,14 @@
             </td>
             <td>
               <%= form_tag update_arrival_railway_station_path(station), method: :patch do %>
-                <%= time_field_tag :arrival_time, 
-                                   station.time_in(@route, :arrival_time).try(:strftime, "%H:%M") %>
+                <%= time_field_tag :arrival_time, station.time_in(@route, :arrival_time) %>
                 <%= hidden_field_tag :route_id, @route.id %>
                 <%= submit_tag "Изменить" %>
               <% end %>
             </td>
             <td>
               <%= form_tag update_departure_railway_station_path(station), method: :patch do %>
-                <%= time_field_tag :departure_time, 
-                                   station.time_in(@route, :departure_time).try(:strftime, "%H:%M") %>
+                <%= time_field_tag :departure_time, station.time_in(@route, :departure_time) %>
                 <%= hidden_field_tag :route_id, @route.id %>
                 <%= submit_tag "Изменить" %>
               <% end %>
