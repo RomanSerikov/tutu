@@ -6,6 +6,7 @@
       <th>Номер поезда</th>
       <th>Отправление с <%= @start.title %></th>
       <th>Прибытие на <%= @finish.title %></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,14 @@
       <td><%= result.number %></td>
       <td><%= @start.time_in(result.route, :departure_time) %></td>
       <td><%= @finish.time_in(result.route, :arrival_time) %></td>
+      <td>
+        <%= form_tag new_ticket_path, method: :get do %>
+          <%= hidden_field_tag :train_id, result.id %>
+          <%= hidden_field_tag :start_station_id, @start.id %>
+          <%= hidden_field_tag :end_station_id, @finish.id %>
+          <%= submit_tag "Купить" %>
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>

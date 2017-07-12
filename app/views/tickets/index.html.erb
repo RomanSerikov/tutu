@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Билеты</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>ID Билета</td>
+      <td>ID Поезда</td>
+      <td>Станция отправления</td>
+      <td>Станция прибытия</td>
+      <td>ID Пользователя</td>
+      <td>ФИО</td>
+      <td>Номер паспорта</td>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @tickets %>
+  </tbody>
+</table>

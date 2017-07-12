@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   end
   
   resources :routes
+  
+  resources :tickets, except: [:edit, :update]
 
   resource :search, only: [:new, :show, :create]
 
