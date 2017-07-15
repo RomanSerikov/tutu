@@ -1,5 +1,5 @@
-<h1>Новый вагон</h1>
+<h1>Новый вагон у поезда № <%= @train.number %></h1>
 
 <%= render 'form', carriage: @carriage %>
 
-<%= link_to 'Назад', carriages_path %>
+<%= link_to 'Назад', @train %>

@@ -1,21 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Номер вагона в поезде:</strong>
+  <%= @carriage.number %>
+</p>
+
+<p>
   <strong>Тип:</strong>
   <%= @carriage.type %>
 </p>
-
-<%= render @carriage.type.underscore %>
 
 <p>
   <strong>Входит в поезд:</strong>
   <%= @carriage.train.number %>
 </p>
 
-<p>
-  <strong>Номер вагона в поезде:</strong>
-  <%= @carriage.number %>
-</p>
+<%= render @carriage.type.underscore %>
 
 <%= link_to 'Изменить', edit_carriage_path(@carriage) %> |
-<%= link_to 'Назад', carriages_path %>
+<%= link_to 'Удалить', @carriage, method: :delete, data: { confirm: 'Вы уверены?' } %> |
+<%= link_to 'Назад', @carriage.train %>

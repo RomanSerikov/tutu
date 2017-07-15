@@ -1,4 +1,4 @@
-<%= form_for(carriage.becomes(Carriage)) do |form| %>
+<%= form_for [@train, carriage.becomes(Carriage)] do |form| %>
 
   <%= render 'common/errors', resource: carriage %>
 
@@ -32,10 +32,10 @@
     <%= form.number_field :chair_seats %>
   </div>
 
-  <div class="field">
+<!--   <div class="field">
     <%= form.label :train, "Выбрать поезд" %>
     <%= form.collection_select :train_id, Train.all, :id, :number %>
-  </div>
+  </div> -->
 
   <div class="actions">
     <%= form.submit "#{ carriage.new_record? ? 'Создать' : 'Изменить' }" %>

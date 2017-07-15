@@ -23,13 +23,21 @@
 <p>
   <% if @route.railway_stations.present? %>
     <strong>Станции, входящие в маршрут:</strong>
-    <% @route.railway_stations.each do |station| %>
-      <ul>
-        <li>
-          <%= station.title %>
-        </li>
-      </ul>
-    <% end %>
+    <table>
+      <thead>
+        <tr>
+          <td width="100px">Название</td>
+          <td>Позиция</td>
+          <td>Время прибытия</td>
+          <td>Время отправления</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @route.railway_stations.ordered.each do |station| %>
+          <%= render "route_station", station: station %>
+        <% end %>
+      </tbody>
+    </table>
   <% else %>
     Станций в маршруте нет
   <% end %>

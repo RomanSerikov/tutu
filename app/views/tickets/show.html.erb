@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ticket id:</strong>
+  <%= @ticket.id %>
+</p>
+
+<p>
+  <strong>Train id:</strong>
+  <%= @ticket.train_id %>
+</p>
+
+<p>
+  <strong>Start station:</strong>
+  <%= @ticket.start_station.title %>
+</p>
+
+<p>
+  <strong>End station:</strong>
+  <%= @ticket.end_station.title %>
+</p>
+
+<p>
+  <strong>User id:</strong>
+  <%= @ticket.user_id %>
+</p>
+
+<p>
+  <strong>User fullname:</strong>
+  <%= @ticket.user_fullname %>
+</p>
+
+<p>
+  <strong>Passport number:</strong>
+  <%= @ticket.pasport_number %>
+</p>
+
+<%= link_to 'Посмотреть все билеты', tickets_path %> |
+<%= link_to 'Найти еще билеты', new_search_path %>
