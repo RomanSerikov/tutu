@@ -7,8 +7,6 @@ class Search < ApplicationRecord
     results = trains_start_st & trains_finish_st
   end
 
-  private
-
   def self.set_trains(station)
     Train.joins(route: :railway_stations).where("railway_station_id = ? ", station)
   end

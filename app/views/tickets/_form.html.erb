@@ -13,8 +13,12 @@
   </div>
 
   <div class="field">
+    <%= form.label :user_id, "Выбрать Пользователя" %>
+    <%= form.collection_select :user_id, User.all, :id, :id %>
+  </div>
+
+  <div class="field">
     <%= form.hidden_field :train_id, :value => params[:train_id] %>
-    <%= form.hidden_field :user_id, :value => "1" %>
     <%= form.hidden_field :start_station_id, :value => params[:start_station_id] %>
     <%= form.hidden_field :end_station_id, :value => params[:end_station_id] %>
   </div>
