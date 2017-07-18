@@ -1,0 +1,43 @@
+<%= form_for [:admin, @train, carriage.becomes(Carriage)] do |form| %>
+
+  <%= render 'common/errors', resource: carriage %>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.select :type, Carriage::CARRIAGE_TYPES %>
+  </div>
+
+  <div class="field">
+    <%= form.label :topseats %>
+    <%= form.number_field :topseats %>
+  </div>
+
+  <div class="field">
+    <%= form.label :botseats %>
+    <%= form.number_field :botseats %>
+  </div>
+
+  <div class="field">
+    <%= form.label :side_top_seats %>
+    <%= form.number_field :side_top_seats %>
+  </div>
+
+  <div class="field">
+    <%= form.label :side_bot_seats %>
+    <%= form.number_field :side_bot_seats %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chair_seats %>
+    <%= form.number_field :chair_seats %>
+  </div>
+
+<!--   <div class="field">
+    <%= form.label :train, "Выбрать поезд" %>
+    <%= form.collection_select :train_id, Train.all, :id, :number %>
+  </div> -->
+
+  <div class="actions">
+    <%= form.submit "#{ carriage.new_record? ? 'Создать' : 'Изменить' }" %>
+  </div>
+<% end %>

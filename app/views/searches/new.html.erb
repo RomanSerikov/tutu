@@ -1,7 +1,5 @@
 <h1>Поиск билетов на поезд</h1>
 
-<p id="notice"><%= notice %></p>
-
 <%= form_tag search_path, method: :post do %>
   <%= label_tag "Начальная станция" %>
   <%= select_tag "start_station", options_from_collection_for_select(@stations, "id", "title"), prompt: "Выберите станцию" %>
