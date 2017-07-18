@@ -10,7 +10,19 @@
 
   <body>
     <%= render 'common/header' %>
+
+    <p id="notice" class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <% if user_signed_in? %>
+      <%= current_user.email %> |
+      <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Войти", new_user_session_path %>
+    <% end %>
+
     <%= yield %>
+    
     <%= render 'common/footer' %>
   </body>
 </html>
