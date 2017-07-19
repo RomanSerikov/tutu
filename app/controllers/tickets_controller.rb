@@ -15,7 +15,12 @@ class TicketsController < ApplicationController
   end
 
   def create
-    @ticket = current_user.tickets.new(ticket_params)
+    @ticket = 
+      if current_user.admin?
+        Ticket.new(ticket_params)
+      else
+        current_user.tickets.new(ticket_params)
+      end
 
     if @ticket.save
       redirect_to @ticket, notice: 'Ticket was successfully created.'
@@ -36,11 +41,11 @@ class TicketsController < ApplicationController
 
     def ticket_params
       params.require(:ticket).permit(:train_id, :start_station_id, :end_station_id,
-                                     :user_fullname, :pasport_number)
+                                     :user_id, :user_fullname, :pasport_number)
     end
 
     def check_user
-      unless current_user == @ticket.user
+      unless current_user == @ticket.user || current_user.admin
         redirect_to root_path, alert: "У вас нет прав на просмотр этой страницы"
       end
     end

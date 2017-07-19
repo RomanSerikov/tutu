@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :chair_carriages,     :controller => "carriages", :type => "ChairCarriage"
 
     resources :routes
+    resources :tickets, except: [:new, :create]
   end
   
   resources :tickets, except: [:edit, :update]

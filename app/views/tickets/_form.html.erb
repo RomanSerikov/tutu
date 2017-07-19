@@ -12,6 +12,13 @@
     <%= form.number_field :pasport_number %>
   </div>
 
+  <% if current_user.admin? %>
+    <div class="field">
+      <%= form.label :user_id, "Выбрать Пользователя" %>
+      <%= form.collection_select :user_id, User.all, :id, :id %>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= form.hidden_field :train_id, :value => params[:train_id] %>
     <%= form.hidden_field :start_station_id, :value => params[:start_station_id] %>
