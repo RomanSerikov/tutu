@@ -2,6 +2,9 @@ class Admin::BaseController < ApplicationController
   before_action :authenticate_user!
   before_action :check_admin
 
+  def control
+  end
+
   protected
 
     def check_admin

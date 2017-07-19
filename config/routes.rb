@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root "searches#new"
   
   namespace :admin do
+    get "control", to: 'base#control'
+
     resources :railway_stations do
       patch :update_position,  on: :member
       patch :update_arrival,   on: :member
