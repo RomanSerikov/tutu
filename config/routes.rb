@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 
   root "searches#new"
   
   namespace :admin do
     resources :railway_stations do
-    patch :update_position,  on: :member
-    patch :update_arrival,   on: :member
-    patch :update_departure, on: :member
+      patch :update_position,  on: :member
+      patch :update_arrival,   on: :member
+      patch :update_departure, on: :member
     end
 
     resources :trains do
