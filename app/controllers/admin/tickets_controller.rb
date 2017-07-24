@@ -8,6 +8,20 @@ class Admin::TicketsController < Admin::BaseController
   def show
   end
 
+  def new
+    @ticket = Ticket.new
+  end
+
+  def create
+    @ticket = Ticket.new(ticket_params)
+
+    if @ticket.save
+      redirect_to [:admin, @ticket]
+    else
+      render :new
+    end
+  end
+
   def edit
   end
 

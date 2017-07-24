@@ -18,12 +18,21 @@
   </div>
 
   <div class="field">
-    <%= form.hidden_field :train_id %>
-    <%= form.hidden_field :start_station_id %>
-    <%= form.hidden_field :end_station_id %>
+    <%= form.label :train_id, "Выбрать Поезд" %>
+    <%= form.collection_select :train_id, Train.all, :id, :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_station_id, "Начальная Станция" %>
+    <%= form.collection_select :start_station_id, RailwayStation.all, :id, :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_station_id, "Конечная Станция" %>
+    <%= form.collection_select :end_station_id, RailwayStation.all, :id, :title %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Изменить" %>
+    <%= form.submit ticket.new_record? ? "Создать" : "Изменить" %>
   </div>
 <% end %>

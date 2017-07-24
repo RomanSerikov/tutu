@@ -1,7 +1,6 @@
 class TicketsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_ticket, only: [:show, :destroy]
-  before_action :check_user, only: [:show, :destroy]
 
   def index
     @tickets = current_user.tickets
@@ -15,12 +14,7 @@ class TicketsController < ApplicationController
   end
 
   def create
-    @ticket = 
-      if current_user.admin?
-        Ticket.new(ticket_params)
-      else
-        current_user.tickets.new(ticket_params)
-      end
+    @ticket = current_user.tickets.new(ticket_params)
 
     if @ticket.save
       redirect_to @ticket, notice: 'Ticket was successfully created.'
@@ -36,17 +30,11 @@ class TicketsController < ApplicationController
 
   private
     def set_ticket
-      @ticket = Ticket.find(params[:id])
+      @ticket = current_user.tickets.find(params[:id])
     end
 
     def ticket_params
       params.require(:ticket).permit(:train_id, :start_station_id, :end_station_id,
                                      :user_id, :user_fullname, :pasport_number)
-    end
-
-    def check_user
-      unless current_user == @ticket.user || current_user.admin
-        redirect_to root_path, alert: "У вас нет прав на просмотр этой страницы"
-      end
     end
 end
