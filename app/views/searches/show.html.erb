@@ -1,6 +1,6 @@
 <h1>Результат поиска:</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Номер поезда</th>
@@ -20,7 +20,7 @@
           <%= hidden_field_tag :train_id, result.id %>
           <%= hidden_field_tag :start_station_id, @start.id %>
           <%= hidden_field_tag :end_station_id, @finish.id %>
-          <%= submit_tag "Купить" %>
+          <%= submit_tag "Купить", class: "btn btn-primary" %>
         <% end %>
       </td>
     </tr>

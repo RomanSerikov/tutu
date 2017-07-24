@@ -4,10 +4,11 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :railway_station_title %>
+    <%= form.text_field :title, id: :railway_station_title, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit t('.submit', action: railway_station.new_record? ? 'Создать' : 'Изменить') %>
+    <%= form.submit t('.submit', action: railway_station.new_record? ? 'Создать' : 'Изменить'), 
+                    class: "btn btn-primary" %>
   </div>
 <% end %>

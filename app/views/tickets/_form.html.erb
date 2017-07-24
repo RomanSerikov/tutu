@@ -4,12 +4,12 @@
 
   <div class="field">
     <%= form.label :user_fullname %>
-    <%= form.text_field :user_fullname %>
+    <%= form.text_field :user_fullname, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :pasport_number %>
-    <%= form.number_field :pasport_number %>
+    <%= form.number_field :pasport_number, class: "form-control" %>
   </div>
 
   <div class="field">
@@ -19,6 +19,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Купить" %>
+    <%= form.submit "Купить", class: "btn btn-primary" %>
   </div>
 <% end %>

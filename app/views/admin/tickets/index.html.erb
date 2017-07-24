@@ -1,20 +1,24 @@
-<h1>Билеты</h1>
-<table>
-  <thead>
-    <tr>
-      <th>ID Билета</th>
-      <th>ID Поезда</th>
-      <th>Станция отправления</th>
-      <th>Станция прибытия</th>
-      <th>ID Пользователя</th>
-      <th>ФИО</th>
-      <th>Номер паспорта</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render @tickets %>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col-md-12">
+    <h1>Билеты</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID Билета</th>
+          <th>ID Поезда</th>
+          <th>Станция отправления</th>
+          <th>Станция прибытия</th>
+          <th>ID Пользователя</th>
+          <th>ФИО</th>
+          <th>Номер паспорта</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @tickets %>
+      </tbody>
+    </table>
 
-<%= link_to 'Создать Билет', new_admin_ticket_path %>
+    <%= link_to 'Создать Билет', new_admin_ticket_path %>
+  </div>
+</div>

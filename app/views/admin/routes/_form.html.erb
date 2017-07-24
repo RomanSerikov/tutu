@@ -4,10 +4,11 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit t('.submit', action: route.new_record? ? 'Создать' : 'Изменить') %>
+    <%= form.submit t('.submit', action: route.new_record? ? 'Создать' : 'Изменить'), 
+                    class: "btn btn-primary" %>
   </div>
 <% end %>
