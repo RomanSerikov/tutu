@@ -1,23 +1,35 @@
 Rails.application.routes.draw do
-  resources :trains do
-    resources :carriages, shallow: true
-  end
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 
-  resources :railway_stations do
-    patch :update_position,  on: :member
-    patch :update_arrival,   on: :member
-    patch :update_departure, on: :member
-  end
+  root "searches#new"
   
-  resources :routes
+  namespace :admin do
+    get "control", to: 'base#control'
+
+    resources :railway_stations do
+      patch :update_position,  on: :member
+      patch :update_arrival,   on: :member
+      patch :update_departure, on: :member
+    end
+
+    resources :trains do
+      resources :carriages, shallow: true
+    end
+
+    resources :coupe_carriages,     :controller => "carriages", :type => "CoupeCarriage"
+    resources :platscard_carriages, :controller => "carriages", :type => "PlatscardCarriage"
+    resources :sv_carriages,        :controller => "carriages", :type => "SvCarriage"
+    resources :chair_carriages,     :controller => "carriages", :type => "ChairCarriage"
+
+    resources :routes
+    resources :tickets
+  end
   
   resources :tickets, except: [:edit, :update]
+  resource  :search,  only:   [:new, :show, :create]
 
-  resource :search, only: [:new, :show, :create]
 
-  resources :coupe_carriages,     :controller => "carriages", :type => "CoupeCarriage"
-  resources :platscard_carriages, :controller => "carriages", :type => "PlatscardCarriage"
-  resources :sv_carriages,        :controller => "carriages", :type => "SvCarriage"
-  resources :chair_carriages,     :controller => "carriages", :type => "ChairCarriage"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

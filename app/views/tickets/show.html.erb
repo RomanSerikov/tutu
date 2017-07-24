@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Ticket id:</strong>
   <%= @ticket.id %>
@@ -35,5 +33,5 @@
   <%= @ticket.pasport_number %>
 </p>
 
-<%= link_to 'Посмотреть все билеты', tickets_path %> |
+<%= link_to 'Посмотреть все билеты', current_user.admin? ? admin_tickets_path : tickets_path %> |
 <%= link_to 'Найти еще билеты', new_search_path %>
