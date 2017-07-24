@@ -3,24 +3,24 @@
   <%= render 'common/errors', resource: train %>
 
   <div class="field">
-    <%= form.label :number, "Номер" %>
+    <%= form.label :number %>
     <%= form.number_field :number, id: :train_number %>
   </div>
 
   <div class="field">
-    <%= form.label :route, "Выбрать маршрут" %>
+    <%= form.label :route %>
     <%= form.collection_select :route_id, Route.all, :id, :title %>
   </div>
 
   <div class="field">
     Сортировка вагонов<br/>
     <%= form.radio_button :head_sort, true %>
-    <%= form.label :head_sort, "C головы поезда", :value => true, :class => "show_inline" %><br/>
+    <%= form.label :head_sort, t('.head_sort'), :value => true, :class => "show_inline" %><br/>
     <%= form.radio_button :head_sort, false %>
-    <%= form.label :head_sort, "C хвоста поезда", :value => false, :class => "show_inline" %>
+    <%= form.label :head_sort, t('.tail_sort'), :value => false, :class => "show_inline" %>
   </div>
 
   <div class="actions">
-    <%= form.submit "#{ train.new_record? ? 'Создать' : 'Изменить' }" %>
+    <%= form.submit t('.submit', action: train.new_record? ? 'Создать' : 'Изменить') %>
   </div>
 <% end %>

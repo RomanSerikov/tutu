@@ -8,6 +8,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "#{ route.new_record? ? 'Создать' : 'Изменить' }" %>
+    <%= form.submit t('.submit', action: route.new_record? ? 'Создать' : 'Изменить') %>
   </div>
 <% end %>

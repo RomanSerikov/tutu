@@ -62,8 +62,8 @@
 </p>
 
 <p>
-  <%= link_to "Добавить вагон", new_admin_train_carriage_path(@train) %>
+  <%= link_to t('.add_carriage'), new_admin_train_carriage_path(@train) %>
 </p>
 
-<%= link_to 'Изменить', edit_admin_train_path(@train) %> |
-<%= link_to 'Назад', admin_trains_path %>
+<%= link_to t('common.edit'), edit_admin_train_path(@train) %> |
+<%= link_to t('common.back'), admin_trains_path %>

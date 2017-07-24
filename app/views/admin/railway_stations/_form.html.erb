@@ -8,6 +8,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "#{ railway_station.new_record? ? 'Создать' : 'Изменить' }" %>
+    <%= form.submit t('.submit', action: railway_station.new_record? ? 'Создать' : 'Изменить') %>
   </div>
 <% end %>
