@@ -1,0 +1,11 @@
+tr  
+  td = ticket.id
+  td = ticket.train_id
+  td = ticket.start_station.title
+  td = ticket.end_station.title
+  td = ticket.user_id
+  td = ticket.user_fullname
+  td = ticket.pasport_number
+  td = link_to 'Показать', [:admin, ticket]
+  td = link_to 'Изменить', edit_admin_ticket_path(ticket)
+  td = link_to 'Удалить', [:admin, ticket], method: :delete, data: { confirm: 'Вы уверены?' }
