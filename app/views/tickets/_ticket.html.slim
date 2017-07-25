@@ -1,0 +1,10 @@
+tr
+  td = ticket.id
+  td = ticket.train_id
+  td = ticket.start_station.title
+  td = ticket.end_station.title
+  td = ticket.user_id
+  td = ticket.user_fullname
+  td = ticket.pasport_number
+  td = link_to 'Показать', ticket
+  td = link_to 'Удалить', ticket, method: :delete, data: { confirm: 'Вы уверены?' }
