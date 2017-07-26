@@ -1,0 +1,13 @@
+.row
+  .col-md-8
+    h1 = t('.title')
+    table class="table"
+      thead
+        tr
+          th = t('.station_title')
+          th colspan="3"
+
+      tbody
+        = render @railway_stations
+
+    = link_to t('.create'), new_admin_railway_station_path
