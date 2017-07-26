@@ -1,0 +1,6 @@
+.row
+  h1 Изменить вагон у поезда № #{@carriage.train.number}
+  .col-md-4
+    = render 'form', carriage: @carriage
+
+    = link_to 'Назад', [:admin, @carriage]

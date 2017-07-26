@@ -1,0 +1,6 @@
+.row
+  h1 Новый вагон у поезда № #{@train.number}
+  .col-md-4
+    = render 'form', carriage: @carriage
+
+    = link_to 'Назад', [:admin, @train]
