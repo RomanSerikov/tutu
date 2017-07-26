@@ -1,0 +1,16 @@
+.navbar.navbar-default.navbar-static-top
+  .container
+    button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse"
+      span class="icon-bar"
+      span class="icon-bar"
+      span class="icon-bar"
+    
+    = link_to "TutuApp", root_path, class: "navbar-brand"
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      ul class="nav navbar-nav"
+        - if user_signed_in?
+          li = link_to "Выйти", destroy_user_session_path, method: :delete
+          - if current_user.admin?
+            li = link_to "Админка", admin_control_path
+        - else
+          li = link_to "Войти", new_user_session_path
