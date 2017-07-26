@@ -1,0 +1,19 @@
+p
+  strong' Номер вагона в поезде:
+  = @carriage.number
+
+p
+  strong' Тип:
+  = @carriage.type
+
+p
+  strong' Входит в поезд:
+  = @carriage.train.number
+
+= render @carriage.type.underscore
+
+= link_to 'Изменить', edit_admin_carriage_path(@carriage)
+|  |  
+= link_to 'Удалить', [:admin, @carriage], method: :delete, data: { confirm: 'Вы уверены?' }
+|  |  
+= link_to 'Назад', [:admin, @carriage.train]

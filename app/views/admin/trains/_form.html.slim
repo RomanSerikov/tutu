@@ -1,0 +1,24 @@
+= form_with(model: [:admin, train], local: true) do |form|
+  
+  = render 'common/errors', resource: train
+
+  .field
+    = form.label :number
+    = form.number_field :number, id: :train_number, class: "form-control"
+
+  .field
+    = form.label :route
+    = form.collection_select :route_id, Route.all, :id, :title, { prompt: "Выберите маршрут" }, 
+                             { class: "form-control" }
+
+  .field
+    strong Сортировка вагонов
+    br
+    =' form.radio_button :head_sort, true
+    = form.label :head_sort, t('.head_sort'), :value => true, :class => "show_inline"
+    br
+    =' form.radio_button :head_sort, false
+    = form.label :head_sort, t('.tail_sort'), :value => false, :class => "show_inline"
+
+  .actions
+    = form.submit t('.submit', action: train.new_record? ? 'Создать' : 'Изменить'), class: "btn btn-primary"

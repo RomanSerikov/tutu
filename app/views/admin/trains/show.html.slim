@@ -1,0 +1,56 @@
+p
+  strong' Номер поезда:
+  = @train.number
+
+p
+  - if @train.route.present?
+    strong' Маршрут:
+    = @train.route.title
+  - else
+    Маршрут не назначен
+
+p
+  strong' Сортировка:
+  = @train.head_sort ? "С головы поезда" : "С хвоста поезда"
+
+p
+  - if @train.carriages.present?
+    strong Вагоны:
+    ul
+      - @train.carriages.choose_head(@train).each do |carriage|
+        li = link_to "Вагон № #{carriage.number}", [:admin, carriage]
+
+    p
+      strong' Купейных вагонов в поезде:
+      = @train.carriages.coupe.count
+
+    p
+      strong' Плацкартных вагонов в поезде:
+      = @train.carriages.platscard.count
+
+    p
+      strong' Купейных верхних мест:
+      = @train.count_seats(:coupe_carriage, :topseats)
+
+    p
+      strong' Купейных нижних мест:
+      = @train.count_seats(:coupe_carriage, :botseats)
+
+    p
+      strong' Плацкартных верхних мест:
+      = @train.count_seats(:platscard_carriage, :topseats)
+
+    p
+      strong' Плацкартных нижних мест:
+      = @train.count_seats(:platscard_carriage, :botseats)
+
+  - else
+    У поезда нет вагонов
+
+p
+  = link_to t('.add_carriage'), new_admin_train_carriage_path(@train)
+
+
+= link_to t('common.edit'), edit_admin_train_path(@train)
+|  |  
+= link_to t('common.back'), admin_trains_path

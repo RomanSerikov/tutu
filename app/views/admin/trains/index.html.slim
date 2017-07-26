@@ -1,0 +1,15 @@
+.row
+  .col-md-8
+    h1 = t('.title')
+
+    table class="table"
+      thead
+        tr
+          th = t('.number')
+          th colspan="3"
+
+      tbody
+        = render @trains
+
+    br
+    = link_to t('.create'), new_admin_train_path

@@ -1,0 +1,17 @@
+h1 Вагоны
+
+table class="table"
+  thead
+    tr
+      th>Тип
+      th>Номер поезда
+      th>Номер вагона
+      th>Кол-во верхних мест
+      th>Кол-во нижних мест
+      th>Кол-во верхних боковых мест
+      th>Кол-во нижних боковых мест
+      th>Кол-во сидячих мест
+      th colspan="3"
+
+  tbody
+    = render partial: "carriage", collection: @carriages, as: :carriage

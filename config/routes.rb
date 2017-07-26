@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   namespace :admin do
     get "control", to: 'base#control'
+    get "carriages", to: 'carriages#index'
 
     resources :railway_stations do
       patch :update_position,  on: :member

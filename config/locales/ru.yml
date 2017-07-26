@@ -1,0 +1,93 @@
+ru:
+  activerecord:
+    models:
+      carriage: 'Вагон'
+      railway_station: 'Станция'
+      route: 'Маршрут'
+      ticket: 'Билет'
+      train: 'Поезд'
+      user: 'Пользователь'
+    attributes:
+      carriage:
+        topseats: 'Верхние места'
+        botseats: 'Нижние места'
+        side_top_seats: 'Верхние боковые места'
+        side_bot_seats: 'Нижние боковые места'
+        chair_seats: 'Сидячие места'
+        type: 'Тип'
+        train: 'Поезд'
+        number: 'Номер'
+      railway_station:
+        title: 'Название'
+      route:
+        title: 'Название'
+      ticket:
+        train: 'Поезд'
+        start_station: 'Начальная станция'
+        end_station: 'Конечная станция'
+        user: 'Пользователь'
+        user_fullname: 'ФИО пассажира'
+        pasport_number: 'Номер паспорта'
+      train:
+        number: 'Номер'
+        route: 'Маршрут'
+        current_station: 'Текущая станция'
+      user:
+        email: 'Электронная почта'
+        firstname: 'Имя'
+        lastname: 'Фамилия'
+    errors:
+      messages:
+        blank: 'не может быть пустым'
+      models:
+        railway_station:
+          attributes:
+            title:
+              blank: 'должно быть указано'
+  common:
+    ask: 'Вы уверены?'
+    back: 'Назад'
+    delete: 'Удалить'
+    edit: 'Изменить'
+    errors: 'При заполнении формы возникли ошибки'
+    show: 'Показать'
+  admin:
+    railway_stations:
+      edit:
+        title: 'Изменить станцию'
+      form:
+        submit: '%{action} станцию'
+      index:
+        create: 'Добавить станцию'
+        station_title: 'Название'
+        title: 'Станции'
+      new:
+        title: 'Новая станция'
+      show:
+        title: 'Название'
+    routes:
+      edit:
+        title: 'Изменить маршрут'
+      form:
+        submit: '%{action} маршрут'
+      index:
+        create: 'Добавить маршрут'
+        route_title: 'Название'
+        title: 'Маршруты'
+      new:
+        title: 'Новый маршрут'
+    trains:
+      edit:
+        title: 'Изменить поезд'
+      form:
+        head_sort: 'С головы поезда'
+        tail_sort: 'С хвоста поезда'
+        submit: '%{action} поезд'
+      index:
+        create: 'Добавить поезд'
+        number: 'Номер'
+        title: 'Поезда'
+      new:
+        title: 'Новый поезд'
+      show:
+        add_carriage: 'Добавить вагон'

@@ -1,0 +1,31 @@
+= form_for [:admin, @train, carriage.becomes(Carriage)] do |form|
+
+  = render 'common/errors', resource: carriage
+
+  .field
+    = form.label :type
+    = form.select :type, Carriage::CARRIAGE_TYPES, { prompt: "Выберите тип вагона" },
+                  { class: "form-control" }
+
+  .field
+    = form.label :topseats
+    = form.number_field :topseats, class: "form-control"
+
+  .field
+    = form.label :botseats
+    = form.number_field :botseats, class: "form-control"
+
+  .field
+    = form.label :side_top_seats
+    = form.number_field :side_top_seats, class: "form-control"
+
+  .field
+    = form.label :side_bot_seats
+    = form.number_field :side_bot_seats, class: "form-control"
+
+  .field
+    = form.label :chair_seats
+    = form.number_field :chair_seats, class: "form-control"
+
+  .actions
+    = form.submit "#{ carriage.new_record? ? 'Создать' : 'Изменить' }", class: "btn btn-primary"

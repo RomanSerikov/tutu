@@ -1,0 +1,34 @@
+= form_with(model: [:admin, ticket], local: true) do |form|
+  
+  = render 'common/errors', resource: ticket
+
+  .field
+    = form.label :user_fullname
+    = form.text_field :user_fullname, class: "form-control"
+
+  .field
+    = form.label :pasport_number
+    = form.number_field :pasport_number, class: "form-control"
+
+  .field
+    = form.label :user_id, "Выбрать Пользователя"
+    = form.collection_select :user_id, User.all, :id, :id, { prompt: "Выберите" }, 
+                             { class: "form-control" }
+
+  .field
+    = form.label :train_id, "Выбрать Поезд"
+    = form.collection_select :train_id, Train.all, :id, :number, { prompt: "Выберите" }, 
+                             { class: "form-control" }
+
+  .field
+    = form.label :start_station_id, "Начальная Станция"
+    = form.collection_select :start_station_id, RailwayStation.all, :id, :title, { prompt: "Выберите" }, 
+                             { class: "form-control" }
+
+  .field
+    = form.label :end_station_id, "Конечная Станция"
+    = form.collection_select :end_station_id, RailwayStation.all, :id, :title, { prompt: "Выберите" }, 
+                             { class: "form-control" }
+
+  .actions
+    = form.submit ticket.new_record? ? "Создать" : "Изменить", class: "btn btn-primary"

@@ -1,0 +1,7 @@
+.row
+  .col-md-4
+    h1 = t('.title')
+
+    = render 'form', train: @train
+
+    = link_to t('common.back'), admin_trains_path

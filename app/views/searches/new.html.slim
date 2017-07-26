@@ -1,0 +1,17 @@
+h1 Поиск билетов на поезд
+
+.row
+  = form_tag search_path, method: :post do
+    .col-md-4
+      = label_tag "Начальная станция"
+      = select_tag "start_station", options_from_collection_for_select(@stations, "id", "title"), 
+                   prompt: "Выберите станцию", class: "form-control"
+
+    .col-md-4
+      = label_tag "Конечная станция"
+      = select_tag "finish_station", options_from_collection_for_select(@stations, "id", "title"), 
+                   prompt: "Выберите станцию", class: "form-control"
+
+    .col-md-4
+      br
+      = submit_tag "Поиск", class: "btn btn-primary"

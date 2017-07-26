@@ -1,0 +1,19 @@
+.row
+  .col-md-12
+    - if current_user.tickets.present?
+      h1 Билеты
+      table class="table"
+        thead
+          tr
+            th ID Билета
+            th ID Поезда
+            th Станция отправления
+            th Станция прибытия
+            th ID Пользователя
+            th ФИО
+            th Номер паспорта
+            th colspan="2"
+        tbody
+          = render @tickets
+    - else
+      p У вас нет билетов

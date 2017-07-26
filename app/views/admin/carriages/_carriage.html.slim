@@ -1,0 +1,12 @@
+tr
+  td = carriage.type
+  td = carriage.train.number
+  td = carriage.number
+  td = carriage.topseats
+  td = carriage.botseats
+  td = carriage.side_top_seats
+  td = carriage.side_bot_seats
+  td = carriage.chair_seats
+  td = link_to 'Показать', [:admin, carriage]
+  td = link_to 'Изменить', edit_admin_carriage_path(carriage)
+  td = link_to 'Удалить', [:admin, carriage], method: :delete, data: { confirm: 'Вы уверены?' }

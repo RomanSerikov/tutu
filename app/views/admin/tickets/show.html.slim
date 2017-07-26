@@ -1,0 +1,29 @@
+p
+  strong' Ticket id:
+  = @ticket.id
+
+p
+  strong' Train id:
+  = @ticket.train_id
+
+p
+  strong' Start station:
+  = @ticket.start_station.title
+
+p
+  strong' End station:
+  = @ticket.end_station.title
+
+p
+  strong' User id:
+  = @ticket.user_id
+
+p
+  strong' User fullname:
+  = @ticket.user_fullname
+
+p
+  strong' Passport number:
+  = @ticket.pasport_number
+
+= link_to 'Посмотреть все билеты', admin_tickets_path
