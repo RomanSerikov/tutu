@@ -1,0 +1,17 @@
+tr
+  td = station.title
+  td
+    = form_tag update_position_admin_railway_station_path(station), method: :patch do
+      =' number_field_tag :position, station.position_in(@route)
+      = hidden_field_tag :route_id, @route.id
+      = submit_tag "Изменить", class: "btn btn-primary"
+  td
+    = form_tag update_arrival_admin_railway_station_path(station), method: :patch do
+      =' time_field_tag :arrival_time, station.time_in(@route, :arrival_time)
+      = hidden_field_tag :route_id, @route.id
+      = submit_tag "Изменить", class: "btn btn-primary"
+  td
+    = form_tag update_departure_admin_railway_station_path(station), method: :patch do
+      =' time_field_tag :departure_time, station.time_in(@route, :departure_time)
+      = hidden_field_tag :route_id, @route.id
+      = submit_tag "Изменить", class: "btn btn-primary"

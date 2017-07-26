@@ -1,0 +1,11 @@
+= form_with(model: [:admin, route], local: true) do |form|
+
+  = render 'common/errors', resource: route
+
+  .field
+    = form.label :title
+    = form.text_field :title, class: "form-control"
+
+  .actions
+    = form.submit t('.submit', action: route.new_record? ? 'Создать' : 'Изменить'), 
+                  class: "btn btn-primary"
