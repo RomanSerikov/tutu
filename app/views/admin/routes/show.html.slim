@@ -10,7 +10,7 @@ p
         li
           = train.number
   - else
-    Поездов на маршруте нет
+    | Поездов на маршруте нет.
 
 p
   - if @route.railway_stations.present?
@@ -26,7 +26,7 @@ p
         - @route.railway_stations.ordered.each do |station|
           = render "route_station", station: station
   - else
-    Станций в маршруте нет
+    | Станций в маршруте нет.
 
 = link_to t('common.edit'), edit_admin_route_path(@route)
 |  |  
