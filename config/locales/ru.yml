@@ -36,6 +36,9 @@ ru:
         email: 'Электронная почта'
         firstname: 'Имя'
         lastname: 'Фамилия'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        remember_me: 'Запомнить меня'
     errors:
       messages:
         blank: 'не может быть пустым'
@@ -51,6 +54,23 @@ ru:
     edit: 'Изменить'
     errors: 'При заполнении формы возникли ошибки'
     show: 'Показать'
+  devise:
+    registrations:
+      new:
+        char_minimum: 'символов минимум'
+        title: 'Регистрация'
+        submit: 'Зарегистрироваться'
+    sessions:
+      new:
+        title: 'Вход'
+        submit: 'Войти'
+    shared:
+      links:
+        log_in: 'Войти'
+        sign_up: 'Зарегистрироваться'
+        forgot_pass: 'Забыли пароль?'
+        no_confirmation: 'Не получили ссылку для подтверждения?'
+        no_unlock: 'Не получили инструкции по разблокировке?'
   admin:
     railway_stations:
       edit:

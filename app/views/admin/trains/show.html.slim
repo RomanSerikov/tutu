@@ -7,7 +7,7 @@ p
     strong' Маршрут:
     = @train.route.title
   - else
-    Маршрут не назначен
+    | Маршрут не назначен.
 
 p
   strong' Сортировка:
@@ -45,7 +45,7 @@ p
       = @train.count_seats(:platscard_carriage, :botseats)
 
   - else
-    У поезда нет вагонов
+    | У поезда нет вагонов.
 
 p
   = link_to t('.add_carriage'), new_admin_train_carriage_path(@train)
