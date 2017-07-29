@@ -1,4 +1,4 @@
-= hidden = false unless local_assigns[:hidden]
+- hidden = false unless local_assigns[:hidden]
 
 = form_for [:admin, station], html: { style: "display: #{hidden ? 'none' : 'block'}" } do |form|
   
