@@ -38,6 +38,7 @@ gem 'twitter-bootstrap-rails'
 gem 'slim'
 gem 'sendgrid-ruby'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
