@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170726183638) do
     t.bigint "train_id"
     t.integer "number"
     t.index ["id", "type"], name: "index_carriages_on_id_and_type"
-    t.index ["number"], name: "index_carriages_on_number", unique: true
+    t.index ["number", "train_id"], name: "index_carriages_on_number_and_train_id", unique: true
     t.index ["train_id"], name: "index_carriages_on_train_id"
   end
 
