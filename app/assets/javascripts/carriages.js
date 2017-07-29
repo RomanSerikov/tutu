@@ -1,4 +1,8 @@
-$(document).ready(function() {
+var ready;
+
+ready = function() {
+  $('.seats').hide();
+
   $('#carriage_type').change(function() {
     var carriage_type;
 
@@ -6,4 +10,7 @@ $(document).ready(function() {
     $('.seats').hide();
     $(carriage_type).show();
   });
-});
+};
+
+$(document).ready(ready);
+$(document).on('turbolinks:load', ready);
