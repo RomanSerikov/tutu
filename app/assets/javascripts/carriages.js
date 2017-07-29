@@ -1,8 +1,6 @@
 var ready;
 
 ready = function() {
-  $('.seats').hide();
-
   $('#carriage_type').change(function() {
     var carriage_type;
 
