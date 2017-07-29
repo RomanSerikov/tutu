@@ -1,4 +1,6 @@
-= form_with(model: [:admin, train], local: true) do |form|
+- hidden = false unless local_assigns[:hidden]
+
+= form_for [:admin, train], html: { style: "display: #{hidden ? 'none' : 'block'}" } do |form|
   
   = render 'common/errors', resource: train
 

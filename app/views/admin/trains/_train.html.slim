@@ -1,5 +1,8 @@
 tr
-  td = train.number
+  td
+    div id="train_number_#{train.id}"
+      = train.number
+    = render 'form', train: train, hidden: true
   td = link_to t('common.show'), [:admin, train]
-  td = link_to t('common.edit'), edit_admin_train_path(train)
+  td = link_to t('common.edit'), '', class: 'edit_train', data: { train_id: train.id }
   td = link_to t('common.delete'), [:admin, train], method: :delete, data: { confirm: t('common.ask') }
