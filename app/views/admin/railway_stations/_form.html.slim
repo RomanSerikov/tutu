@@ -1,11 +1,13 @@
-= form_with(model: [:admin, railway_station], local: true) do |form|
+- hidden = false unless local_assigns[:hidden]
+
+= form_for [:admin, station], html: { style: "display: #{hidden ? 'none' : 'block'}" } do |form|
   
-  = render 'common/errors', resource: railway_station
+  = render 'common/errors', resource: station
 
   .field
     = form.label :title
     = form.text_field :title, id: :railway_station_title, class: "form-control"
 
   .actions
-    = form.submit t('.submit', action: railway_station.new_record? ? 'Создать' : 'Изменить'), 
+    = form.submit t('.submit', action: station.new_record? ? 'Создать' : 'Изменить'), 
                   class: "btn btn-primary"
