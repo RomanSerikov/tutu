@@ -7,6 +7,7 @@ ready = function() {
     carriage_type = '.' + $(this).val();
     $('.seats').hide();
     $(carriage_type).show();
+    $('.btn-seats').show();
   });
 };
 
