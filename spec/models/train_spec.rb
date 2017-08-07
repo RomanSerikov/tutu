@@ -12,7 +12,7 @@ RSpec.describe Train, type: :model do
   describe '.count_seats' do
     let(:train) { create(:train_with_coupe_carriages, carriages_count: 3) }
 
-    it 'should count seats in all carriages correctly' do
+    it 'in all carriages' do
       expect(train.count_seats(:coupe_carriage, :topseats)).to eq 54
     end
   end
