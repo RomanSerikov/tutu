@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :route do
-    title 'My Route'
+    title 'MyRoute'
   end
 end
