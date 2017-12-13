@@ -5,10 +5,6 @@ class RailwayStation < ApplicationRecord
 
   scope :ordered, -> { select('railway_stations.*, railway_stations_routes.station_position').joins(:railway_stations_routes).order("railway_stations_routes.station_position").uniq }
 
-  # def update_position(route, position)
-  #   railway_stations_routes.find_by(route: route).update(station_position: position)
-  # end
-
   def update_position(route, position)
     station_route = station_route(route)
     station_route.update(station_position: position) if station_route
