@@ -1,9 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe RailwayStation, type: :model do
-  it { should have_many(:railway_stations_routes) }
-  it { should have_many(:routes).through(:railway_stations_routes) }
-  it { should have_many(:trains) }
+  it 'has a valid factory' do
+    expect(build(:railway_station)).to be_valid
+  end
+
+  describe 'ActiveRecord associations' do
+    it { should have_many(:railway_stations_routes) }
+    it { should have_many(:routes).through(:railway_stations_routes) }
+    it { should have_many(:trains) }
+  end
 
   describe '#update_position' do
     let(:route)   { create(:route) }

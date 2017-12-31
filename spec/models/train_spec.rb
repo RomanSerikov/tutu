@@ -1,13 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe Train, type: :model do
-  it { should belong_to :route }
-  it { should have_db_column :route_id }
-  it { should belong_to(:current_station).class_name('RailwayStation') }
-  it { should have_db_column :current_station_id }
+  it 'has a valid factory' do
+    expect(build(:train)).to be_valid
+  end
 
-  it { should have_many(:tickets) }
-  it { should have_many(:carriages) }
+  describe 'ActiveRecord associations' do
+    it { should belong_to :route }
+    it { should have_db_column :route_id }
+    it { should belong_to(:current_station).class_name('RailwayStation') }
+    it { should have_db_column :current_station_id }
+
+    it { should have_many(:tickets) }
+    it { should have_many(:carriages) }
+  end
 
   describe '#count_seats' do
     let(:train) { create(:train) }
