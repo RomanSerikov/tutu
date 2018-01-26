@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+  - 2.2.6
+
+script:
+  - rails db:migrate RAILS_ENV=test
+  - rspec spec
