@@ -3,5 +3,6 @@
 
 Учебное приложение онлайн школы [Thinknetica](http://thinknetica.com).
 
-* **Ruby version:**  2.2.6p396
-* **Rails version:** 5.1.1
+* **Ruby:**  2.2.6
+* **Rails:** 5.1.1
+* **Heroku:** [mighty-lowlands-47487.herokuapp.com](https://mighty-lowlands-47487.herokuapp.com)
