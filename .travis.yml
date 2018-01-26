@@ -1,7 +1,22 @@
 language: ruby
+sudo: true
+
 rvm:
-  - 2.2.6
+ - 2.2.6
+
+services:
+  - postgresql
+
+before_install:
+  - gem update --system
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
 
 script:
-  - rails db:migrate RAILS_ENV=test
-  - rspec spec
+  - bundle exec rake
+
+deploy:
+  provider: script
+  script: bin/build-image
+  on:
+    branch: master
