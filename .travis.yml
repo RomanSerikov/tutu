@@ -14,9 +14,3 @@ before_install:
 
 script:
   - bundle exec rake
-
-deploy:
-  provider: script
-  script: bin/build-image
-  on:
-    branch: master
