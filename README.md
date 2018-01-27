@@ -1,5 +1,6 @@
 # README
 [![Build Status](https://travis-ci.org/RomanSerikov/tutu.svg?branch=master)](https://travis-ci.org/RomanSerikov/tutu)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4e3beec47dd80be920fa/maintainability)](https://codeclimate.com/github/RomanSerikov/tutu/maintainability)
 
 Учебное приложение онлайн школы [Thinknetica](http://thinknetica.com).
 
