@@ -1,0 +1,44 @@
+AllCops:
+  DisplayCopNames: true
+  Include:
+    - 'app/**/*.rb'
+    - 'lib/**/*.rb'
+    - 'lib/**/*.rake'
+  Exclude:
+    - 'config/**/*'
+    - 'vendor/**/*'
+    - 'db/**/*.rb'
+    - 'bin/**/*'
+    - 'spec/spec_helper.rb'
+    - Gemfile
+    - Rakefile
+  
+Metrics/LineLength:
+  Max: 100
+
+Metrics/MethodLength:
+  Max: 15
+
+Metrics/AbcSize:
+  Max: 20
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/UnneededPercentQ:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Layout/TrailingWhitespace:
+  Enabled: false
