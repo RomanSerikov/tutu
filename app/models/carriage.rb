@@ -5,12 +5,12 @@ class Carriage < ApplicationRecord
   scope :chair,     -> { where(type: 'ChairCarriage') }
   scope :choose_head, ->(train) { train.head_sort ? order('number ASC') : order('number DESC') }
 
-  CARRIAGE_TYPES = %w[CoupeCarriage PlatscardCarriage SvCarriage ChairCarriage]
+  CARRIAGE_TYPES = %w[CoupeCarriage PlatscardCarriage SvCarriage ChairCarriage].freeze
 
   belongs_to :train
 
   validates :type, inclusion: { in: CARRIAGE_TYPES,
-    message: "%{value} is not a valid carriage type" }
+                                message: "%{value} is not a valid carriage type" }
   validates :number, uniqueness: { scope: :train_id }
 
   before_validation :set_number
@@ -18,8 +18,6 @@ class Carriage < ApplicationRecord
   private
 
   def set_number
-    if train.present?
-      self.number ||= train.carriages.maximum("number").to_i + 1
-    end
+    self.number ||= train.carriages.maximum("number").to_i + 1 if train.present?
   end
 end

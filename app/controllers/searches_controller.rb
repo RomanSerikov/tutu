@@ -1,8 +1,7 @@
 class SearchesController < ApplicationController
   before_action :set_stations, only: [:create]
 
-  def show
-  end
+  def show; end
 
   def new
     @stations = RailwayStation.all

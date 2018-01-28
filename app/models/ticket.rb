@@ -13,11 +13,11 @@ class Ticket < ApplicationRecord
 
   private
 
-    def send_notification
-      TicketsMailer.buy_ticket(self.user, self).deliver_now
-    end
+  def send_notification
+    TicketsMailer.buy_ticket(user, self).deliver_now
+  end
 
-    def send_about_cancel
-      TicketsMailer.cancel_ticket(self.user, self).deliver_now
-    end
+  def send_about_cancel
+    TicketsMailer.cancel_ticket(user, self).deliver_now
+  end
 end

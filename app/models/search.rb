@@ -4,7 +4,7 @@ class Search < ApplicationRecord
     trains_start_st  = set_trains(start)
     trains_finish_st = set_trains(finish)
 
-    results = trains_start_st & trains_finish_st
+    trains_start_st & trains_finish_st
   end
 
   def self.set_trains(station)
